@@ -8,24 +8,25 @@
 # ### USERNAME          (username to login)
 # ### HOST              (ip or hostname)
 # ### PORT              (ssh port number)
-#
-# ### Copy and paste the script into Codeship ###
-# ###############################################
-# rm -rf node_modules
-# date=`date +%Y-%m-%d:%H:%M:%S`
-# release="$DEPLOY_PATH/releases/$date"
-# echo "$release"
-# ssh $USERNAME@$HOST -p $PORT mkdir -p "$release"
-# rsync -avz -e "ssh -p $PORT" ~/clone/ $USERNAME@$HOST:"$release"
-# ssh $USERNAME@$HOST -p $PORT "cd '$release' && chmod +x deploy.sh && ./deploy.sh '$DEPLOY_PATH' '$release'"
-# ###############################################
 
-path=$1
-release=$2
+# Vars
+date=`date +%Y-%m-%d:%H:%M:%S`
+release="$DEPLOY_PATH/releases/$date"
+echo "$release"
 
-# Update the System link
-ln -nfs "$release" "$path/current"
+# Create directory
+ssh $USERNAME@$HOST -p $PORT mkdir -p "$release"
 
-# Clean up old versions
-cd "$path/releases"
-ls -1d 20* | head -n -5 | xargs -d '\n' rm -Rf
+# Rsync changes
+rsync -vzcrSLh --exclude="deploy.sh" --exclude="node_modules" --exclude=".git*" \
+    ./ $USERNAME@$HOST:"$release"
+
+# Symlink
+ssh $USERNAME@$HOST -p $PORT << EOF
+    cd $release
+    ln -nfs "$release" "$DEPLOY_PATH/current"
+
+    # Clean up old versions
+    cd "$DEPLOY_PATH/releases"
+    ls -1d 20* | head -n -5 | xargs -d '\n' rm -Rf
+EOF
