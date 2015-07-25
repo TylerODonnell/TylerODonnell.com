@@ -1,0 +1,111 @@
+// Animations // --------------------------------------------------
+
+@mixin animation ($name, $duration: 300ms, $delay: 0, $ease: ease, $fillmode: none) {
+    animation: $name $duration $delay $ease;
+    animation-fill-mode: $fillmode;
+}
+
+@mixin transition ($transition, $delay: 0) {
+    transition: $transition;
+    transition-delay: $delay;
+}
+
+@mixin transition-delay($delay: 0) {
+    transition-delay: $delay;
+}
+
+@mixin transition-duration($duration) {
+    transition-duration: $duration;
+}
+
+@mixin transform($string){
+    transform: $string;
+}
+
+@mixin scale ($factor) {
+    transform: scale($factor);
+}
+
+@mixin rotate ($deg) {
+    transform: rotate($deg);
+}
+
+@mixin skew ($deg, $deg2) {
+    transform: skew($deg, $deg2);
+}
+
+@mixin translate ($x, $y:0) {
+    transform: translate($x, $y);
+}
+
+@mixin translate3d ($x, $y: 0, $z: 0) {
+    transform: translate3d($x, $y, $z);
+}
+
+@mixin perspective ($value: 1000) {
+    perspective: $value;
+}
+
+@mixin transform-origin ($x:center, $y:center) {
+    transform-origin: $x $y;
+}
+
+@keyframes underline {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 143px;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translate(-20px, 0);
+        -ms-transform: translate(-20px, 0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+        -ms-transform: translate(0);
+    }
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translate(0, -60px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translate(0, 84px);
+        -ms-transform: translate(0, 84px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+        -ms-transform: translate(0);
+    }
+}

@@ -1,0 +1,29 @@
+// Nvaigation // --------------------------------------------------
+
+@include partial(navigation) {
+
+    display: inline-block;
+
+    a {
+        color: $default-font-color;
+        height: 30px;
+        @include transition(.2s);
+
+        &:hover {
+            box-shadow: inset 0 -3px white;
+            @include transform(translate(0, -3px));
+        }
+    }
+
+    ul {
+        list-style: none;
+        @extend .clearfix;
+    }
+
+    li {
+        float: left;
+        padding: 10px;
+        @include animation(fadeIn, .5s, 1.2s, ease-out, backwards);
+    }
+
+}
