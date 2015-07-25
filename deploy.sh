@@ -15,14 +15,17 @@ release="$DEPLOY_PATH/releases/$date"
 echo "$release"
 
 # Create directory
+echo "Create Directory"
 ssh $USERNAME@$HOST -p $PORT mkdir -p "$release"
 
 # Rsync changes
-rsync -vzcrSLh --exclude="deploy.sh" --exclude="node_modules" --exclude=".git*" \
+echo "Rsync Changes"
+rsync -vzcrSLh -e "ssh -p $PORT" --exclude="deploy.sh" --exclude="node_modules" --exclude="src" --exclude=".git*" \
     ./ $USERNAME@$HOST:"$release"
 
 # Symlink
-ssh $USERNAME@$HOST -p $PORT << EOF
+echo "Symlink"
+ssh $USERNAME@$HOST -p $PORT /bin/bash << EOF
     cd $release
     ln -nfs "$release" "$DEPLOY_PATH/current"
 
