@@ -1,0 +1,17 @@
+//
+// Heading
+//
+
+.c-heading {
+    text-align: center;
+
+    @include element(headline) {
+        @include animation(fadeInDown, .5s, .1s, ease-out, backwards);
+        margin-bottom: $spacer;
+    }
+
+    @include element(sub-headline) {
+        @include animation(fadeIn, .4s, .5s, ease-out, backwards);
+        font-size: 1.1rem;
+    }
+}

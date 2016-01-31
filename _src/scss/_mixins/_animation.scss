@@ -1,6 +1,4 @@
-//
-// Animations
-//
+// Animations // --------------------------------------------------
 
 @mixin animation ($name, $duration: 300ms, $delay: 0, $ease: ease, $fillmode: none) {
     animation: $name $duration $delay $ease;

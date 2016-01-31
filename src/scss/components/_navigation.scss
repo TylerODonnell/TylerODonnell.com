@@ -1,0 +1,33 @@
+//
+// Navigation
+//
+
+.c-navigation {
+    text-align: center;
+
+    @include element(list) {
+        list-style: none;
+        @include clearfix();
+    }
+
+    @include element(item) {
+        display: inline-block;
+        padding: 10px;
+
+        @include animation(fadeIn, .5s, 1.2s, ease-out, backwards);
+
+        a {
+            display: inline-block;
+            height: 30px;
+            color: $body-color;
+
+            @include transition(.2s);
+
+            &:hover {
+                box-shadow: inset 0 -3px white;
+                @include transform(translateY(-3px));
+            }
+        }
+    }
+
+}

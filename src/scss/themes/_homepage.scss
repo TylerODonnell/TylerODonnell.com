@@ -1,0 +1,12 @@
+//
+// Homepage
+//
+
+.t-homepage {
+
+
+    @include element(wrapper) {
+        padding: ($gutter * 3) 0;
+    }
+
+}

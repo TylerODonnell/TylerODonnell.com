@@ -1,0 +1,64 @@
+// @app // --------------------------------------------------
+// @author Piccirilli Dorsey
+// @copyright 2015
+
+//
+// Import Frunt Generator
+// --------------------------------------------------
+
+@import '_vendor/frunt';
+@import '../../node_modules/font-awesome/scss/font-awesome';
+
+//
+// Frunt Global Configuration
+// --------------------------------------------------
+
+@import 'config';
+
+//
+// Frunt Core Mixins
+// --------------------------------------------------
+// Mixins used in the frunt ui core.
+
+@import '_mixins/animation';
+@import '_mixins/clearfix';
+@import '_mixins/valign';
+
+//
+// Frunt Core
+// --------------------------------------------------
+// The core frunt ui.
+
+@import '_core/reset';
+@import '_core/z-index';
+@import '_core/typography';
+@import '_core/grid';
+@import '_core/print';
+@import '_core/misc';
+
+// Helpers
+// --------------------------------------------------
+// Easy style tweaks and helpers.
+
+@import 'mixins'; // User defined mixins, not related to a component
+@import 'tweaks'; // Tweaks, becuase you can't help it
+
+// Partials
+// --------------------------------------------------
+// Reusable once per page partials, reference an id (e.g. #header, #sidebar)
+
+@import "partials/*";
+
+// Components
+// --------------------------------------------------
+// Reusable components that make up a webpage.
+// Referenced in html with a 'c-' prefix (e.g. class="c-button")
+
+@import 'components/*';
+
+// Layouts
+// --------------------------------------------------
+// Layouts are specific to section and override any components, parts or tweaks.
+// Layouts are used is scss: @include layout(home) and in html: class="@home"
+
+@import 'layouts/*';

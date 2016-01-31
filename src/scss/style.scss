@@ -1,64 +1,54 @@
 // @app // --------------------------------------------------
-// @author Piccirilli Dorsey
-// @copyright 2015
+// @author Piccirilli Dorsey (http://picdorsey.com)
+// @copyright 2016
 
-//
-// Import Frunt Generator
-// --------------------------------------------------
-
-@import '_vendor/frunt';
-@import '../../node_modules/font-awesome/scss/font-awesome';
-
-//
-// Frunt Global Configuration
+// Configuration
 // --------------------------------------------------
 
 @import 'config';
 
-//
-// Frunt Core Mixins
+// Mixins
 // --------------------------------------------------
-// Mixins used in the frunt ui core.
 
-@import '_mixins/animation';
-@import '_mixins/clearfix';
-@import '_mixins/valign';
+@import '_mixins/*';
 
-//
-// Frunt Core
+// Core
 // --------------------------------------------------
-// The core frunt ui.
 
-@import '_core/reset';
-@import '_core/z-index';
+@import '_core/reboot';
 @import '_core/typography';
 @import '_core/grid';
+@import '_core/form';
+@import '_core/functions';
 @import '_core/print';
-@import '_core/misc';
+@import '_core/utilities';
+@import '_core/debug';
 
-// Helpers
+// Objects (o-)
 // --------------------------------------------------
-// Easy style tweaks and helpers.
+// Signify that something is an Object, and that it may be used in any number
+// of unrelated contexts to the one you can currently see it in. Making modifications
+// to these types of class could potentially have knock-on effects in a lot of other
+// unrelated places. Tread carefully.
 
-@import 'mixins'; // User defined mixins, not related to a component
-@import 'tweaks'; // Tweaks, becuase you can't help it
+@import "objects/*";
 
-// Partials
+// Components (c-)
 // --------------------------------------------------
-// Reusable once per page partials, reference an id (e.g. #header, #sidebar)
-
-@import "partials/*";
-
-// Components
-// --------------------------------------------------
-// Reusable components that make up a webpage.
-// Referenced in html with a 'c-' prefix (e.g. class="c-button")
+// Signify that something is a Component. This is a concrete, implementation-specific piece
+// of UI. All of the changes you make to its styles should be detectable in the context
+// you’re currently looking at. Modifying these styles should be safe and have no side effects.
 
 @import 'components/*';
 
-// Layouts
+// Themes (t-)
 // --------------------------------------------------
-// Layouts are specific to section and override any components, parts or tweaks.
-// Layouts are used is scss: @include layout(home) and in html: class="@home"
+// Signify that a class is responsible for adding a
+// Theme to a view. It lets us know that UI Components’ current
+// cosmetic appearance may be due to the presence of a theme.
 
-@import 'layouts/*';
+@import 'themes/*';
+
+// Vendor
+
+@import '../../node_modules/font-awesome/scss/font-awesome';

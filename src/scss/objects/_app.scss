@@ -1,0 +1,31 @@
+//
+// App
+//
+
+// Object
+.o-app {
+
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+
+    background-image: url('../images/overlay.png');
+}
+
+html {
+    // Make fonts, gutters, etc 68.75% of original size (11px)
+    // font-size: ($font-size-root * 0.75);
+
+    font-size: $font-size-root;
+
+    @include media-breakpoint-up(sm) {
+        // Make fonts, gutters, etc 84.375% of original size (13.5)
+        // font-size: ($font-size-root * 0.84375);
+    }
+
+    @include media-breakpoint-up(lg) {
+        // Default font size (16px)
+        // font-size: $font-size-root;
+    }
+}
