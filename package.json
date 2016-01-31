@@ -1,46 +1,20 @@
 {
-  "name": "tylerdonnell.com",
-  "version": "0.1.0",
+  "name": "frunt",
+  "version": "1.0.0",
   "license": "MIT",
-  "author": "Tyler O'Donnell",
+  "description": "Scaffolds out a Frunt & gulp.js boilerplate for front-end development",
+  "author": "Piccirilli Dorsey, inc",
   "repository": {},
   "scripts": {
-    "test": "gulp test",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npm install && gulp --production"
   },
   "browser": {},
-  "devDependencies": {
-    "babelify": "^6.0.2",
-    "browser-sync": "^2.2.3",
-    "browserify": "^11.0.0",
-    "del": "^1.1.1",
-    "gulp": "^3.9.0",
-    "gulp-autoprefixer": "^2.1.0",
-    "gulp-concat": "^2.5.2",
-    "gulp-css-globbing": "^0.1.8",
-    "gulp-debug": "^2.0.1",
-    "gulp-if": "^1.2.5",
-    "gulp-jshint": "^1.9.2",
-    "gulp-livereload": "^3.8.0",
-    "gulp-load-plugins": "^1.0.0-rc.1",
-    "gulp-minify-css": "^1.0.0",
-    "gulp-notify": "^2.2.0",
-    "gulp-phpcs": "^0.6.0",
-    "gulp-plumber": "^1.0.0",
-    "gulp-sass": "^2.0.3",
-    "gulp-sourcemaps": "^1.5.0",
-    "gulp-streamify": "0.0.5",
-    "gulp-uglify": "^1.1.0",
-    "gulp-util": "^3.0.6",
-    "gulp-watch": "^4.2.0",
-    "stringify": "^3.1.0",
-    "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "~1.1.0",
-    "yargs": "^3.5.4"
-  },
   "dependencies": {
-    "font-awesome": "^4.3.0",
-    "jquery-exists": "^1.0.4",
-    "underscore": "^1.8.3"
+    "flixir": "^1.0.0",
+    "font-awesome": "^4.5.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.8"
   }
 }
