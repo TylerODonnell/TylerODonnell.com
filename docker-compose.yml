@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+    app:
+        container_name: tylerodonnell_app
+        build:
+            context: ./docker/app
+        restart: unless-stopped
+        expose:
+              - "443"
+        volumes:
+            - .:/var/www/html
+        environment:
+            APP_ENV: production
+            VIRTUAL_HOST: tylerodonnell.com, www.tylerodonnell.com
+            VIRTUAL_PROTO: https
+            VIRTUAL_PORT: 443
+            LETSENCRYPT_HOST: tylerodonnell.com, www.tylerodonnell.com
+            LETSENCRYPT_EMAIL: tyler@tylerodonnell.com
