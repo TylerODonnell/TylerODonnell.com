@@ -32,7 +32,6 @@ COPY php-fpm.conf /etc/php/7.0/fpm/php-fpm.conf
 COPY xdebug.ini /etc/php/7.0/mods-available/xdebug.ini
 
 EXPOSE 80
-EXPOSE 443
 
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY start-container /usr/local/bin/start-container
