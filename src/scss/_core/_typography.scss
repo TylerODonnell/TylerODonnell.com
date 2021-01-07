@@ -49,11 +49,12 @@ a {
     color: $link-color;
     text-decoration: $link-decoration;
 
-    transition: color $animation-xshort ease-in-out;
+    transition: all .2s ease-in-out;
 
     &:hover {
-        color: darken($link-color, 15%);
+        color: $link-hover-color;
         text-decoration: $link-hover-decoration;
+        box-shadow: inset 0 -1px white;
     }
 
     &:focus {

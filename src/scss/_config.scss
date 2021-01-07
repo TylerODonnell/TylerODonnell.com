@@ -101,9 +101,9 @@ $body-color: $gray-lighter;
 //
 // Style anchor elements.
 
-$link-color: $ui-primary;
+$link-color: #fff;
 $link-decoration: none;
-$link-hover-color: darken($link-color, 15%);
+$link-hover-color: $link-color;
 $link-hover-decoration: none;
 
 //
